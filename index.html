@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>상신종합자동차서비스 | 자동차공업사 · 포르쉐 전문 정비</title>
+  <meta name="description" content="광주광역시 광산구 자동차 수리 전문 공업사. 포르쉐 전문 정비 및 일반 차량 정비." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/img/logo.png" alt="상신 로고" />
+        <span class="brand-text">상신종합자동차서비스</span>
+      </a>
+
+      <div class="nav-right">
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      </div>
+
+      <nav class="menu" id="siteMenu">
+        <div class="menu-top">
+          <h4>상신종합자동차서비스</h4>
+          <p>대표: 김관영</p>
+          <p>월~토 10:00 ~ 18:00</p>
+        </div>
+
+        <a class="menu-call-btn" href="tel:+82050713726344">
+            <span class="call-line1">📞 0507-1372-6344</span>
+            <span class="call-line2">바로 전화하기</span>
+        </a>
+
+        <a class="active" href="index.html">홈</a>
+        <a href="about.html">소개</a>
+        <a href="services.html">서비스</a>
+        <a href="gallery.html">사진</a>
+        <a href="contact.html">문의/오시는 길</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero has-img">
+      <div class="container">
+        <p class="badge">자동차공업사 · 광주 광산구</p>
+        <h1>상신종합자동차서비스</h1>
+        <p class="lead">
+          정확한 진단과 꼼꼼한 정비로 안전한 주행을 돕겠습니다.<br/>
+          <b>포르쉐 전문 공업사</b>로서 수입차 정비 경험을 바탕으로 신뢰할 수 있는 서비스를 제공합니다.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="tel:+82050713726344">전화 상담</a>
+          <a class="btn ghost" href="services.html">포르쉐 정비범위</a>
+          <a class="btn ghost" href="contact.html">오시는 길</a>
+        </div>
+
+        <p class="note">
+          대표: 김관영 · 전화: 0507-1372-6344 · 영업시간: 월~토 10:00~18:00 · 예약: 전화<br/>
+          주소(도로명): 광주광역시 광산구 고봉로230번길 10 (지번: 장수동 459)
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>빠른 안내</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>예약 안내</h3>
+            <p class="small">전화</p>
+            <div class="cta"><a class="btn primary" href="tel:+82050713726344">0507-1372-6344</a></div>
+          </div>
+          <div class="card">
+            <h3>포르쉐 전문</h3>
+            <p class="small">진단/브레이크/하체/냉각/누유 등 항목별 점검·정비를 진행합니다.</p>
+            <div class="cta"><a class="btn ghost" href="services.html">정비 범위 보기</a></div>
+          </div>
+          <div class="card">
+            <h3>사진</h3>
+            <p class="small">작업장/차량/정비 현장 사진을 확인하실 수 있습니다.</p>
+            <div class="cta"><a class="btn ghost" href="gallery.html">사진 보기</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="year"></span> 상신종합자동차서비스. All rights reserved.</span>
+    </div>
+  </footer>
+
+
+  <!-- Mobile fixed bottom bar (전화 / 네이버 리뷰) -->
+  <div class="mobile-fixed-bar" role="navigation" aria-label="빠른 실행">
+    <a class="call" href="tel:+82050713726344">📞 전화하기 0507-1372-6344</a>
+    <!-- TODO: 네이버 '플레이스(업체) 페이지' 링크로 교체하시면 리뷰로 바로 연결됩니다 -->
+    <a class="review" target="_blank" rel="noopener"
+       href="https://map.naver.com/v5/search/%EC%83%81%EC%8B%A0%EC%A2%85%ED%95%A9%EC%9E%90%EB%8F%99%EC%B0%A8%EC%84%9C%EB%B9%84%EC%8A%A4%20%EA%B4%91%EC%A3%BC%20%EA%B4%91%EC%82%B0%EA%B5%AC">
+      🏆 네이버 리뷰
+    </a>
+  </div>
+
+
+  <script>
+    (function () {
+      const btn = document.querySelector(".nav-toggle");
+      const menu = document.getElementById("siteMenu");
+      if (!btn || !menu) return;
+
+      // 오버레이가 없으면 자동 생성
+      let overlay = document.querySelector(".nav-overlay");
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.className = "nav-overlay";
+        document.body.appendChild(overlay);
+      }
+
+      function openMenu() {
+        menu.classList.add("is-open");
+        overlay.classList.add("is-open");
+        document.body.classList.add("nav-open");
+        btn.innerHTML = "✕";
+        btn.setAttribute("aria-expanded", "true");
+      }
+
+      function closeMenu() {
+        menu.classList.remove("is-open");
+        overlay.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+        btn.innerHTML = "☰";
+        btn.setAttribute("aria-expanded", "false");
+      }
+
+      function toggleMenu() {
+        const open = menu.classList.contains("is-open");
+        open ? closeMenu() : openMenu();
+      }
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      overlay.addEventListener("click", closeMenu);
+
+      menu.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) closeMenu();
+      });
+
+      // page load animation + footer year
+      window.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("is-loaded");
+        const y = document.getElementById("year");
+        if (y) y.textContent = new Date().getFullYear();
+      });
+
+      // 초기 아이콘
+      btn.innerHTML = "☰";
+    })();
+  </script>
+
+</body>
+</html>
